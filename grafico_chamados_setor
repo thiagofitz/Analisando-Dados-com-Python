@@ -1,0 +1,22 @@
+#Importando Bibliotécas necessárias
+%matplotlib inline
+import pandas as pd
+import pydataset
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+#Importando Dataset
+chamado_setor = pd.read_excel('chamados_setor.xls')
+
+#Analisando as Tabelas
+chamado_setor
+
+#Plotando o Gráfico
+chamado_setor.groupby('tipo')['setor'].value_counts().plot(kind='bar', color='red', figsize=(11,7), label="Setor")
+plt.titl#Plotando o Gráficoe('Gráfico de incidentes por Setor (Mensal) - Junho de 2017')
+plt.ylabel('Chamados')
+plt.xlabel('Setores                                                      "Por: Thiago Fitz" ')
+plt.legend(loc='upper left')
+plt.show()
+
