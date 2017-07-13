@@ -1,0 +1,21 @@
+#Importando Bibliotécas necessárias
+%matplotlib inline
+import pandas as pd
+import pydataset
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+#Importando Dataset
+chamado = pd.read_excel('chamados_responsavel.xls')
+
+#Analisando as Tabelas
+chamado
+
+#Plotando o Gráfico
+chamado.groupby('idresponsavel')['responsavel'].value_counts().plot(kind='bar', color='red', figsize=(11,7), label="Responsável")
+plt.title('Gráfico de incidentes por responsavel (Mensal) - Junho de 2017')
+plt.ylabel('Chamados')
+plt.xlabel('Responsáveis                                                            "Por: Thiago Fitz"')
+plt.legend(loc='upper left')
+plt.show()
